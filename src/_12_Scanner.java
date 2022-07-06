@@ -20,7 +20,6 @@ class _12_Scanner {
 
         System.out.println("hi " + userName + " " + userLastName + ", you're " + userAge + " year's old.");
 
-
         /*
         if we want to save decimal numbers using for example .nextDouble() we can face problem with separators:
          2.4 (dot is used in USA), 2,5 (coma is used in Europe)

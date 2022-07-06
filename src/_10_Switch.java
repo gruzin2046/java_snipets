@@ -28,5 +28,20 @@ public class _10_Switch {
             default:
                 System.out.println("this in not a day");
         }
+
+        // instead of casual switch we can use enhanced switch statement,
+        // shorter, clearer, without break
+        day = "Monday";
+
+        switch (day) {
+            case "Monday" -> System.out.println("Today is Monday");
+            case "Tuesday" -> System.out.println("Today is Tuesday");
+            case "Wednesday" -> System.out.println("Today is Wednesday");
+            case "Thursday" -> System.out.println("Today is Thursday");
+            case "Friday" -> System.out.println("Today is Friday");
+            case "Saturday" -> System.out.println("Today is Saturday");
+            case "Sunday" -> System.out.println("Today is Sunday");
+            default -> System.out.println("this in not a day");
+        }
     }
 }

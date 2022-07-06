@@ -34,5 +34,6 @@ public class _8_ConstructorOverload {
         _8_ConstructorOverload obj4 = new _8_ConstructorOverload(2, 22, "Dani", "pink");
         System.out.println(obj2.name); // prints: Udo_the_KIng
         System.out.println(obj4.favouriteColor); // prints: pink
+        System.out.println(obj3.name + " is " + obj3.age + "years old");
     }
 }
