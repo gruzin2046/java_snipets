@@ -25,6 +25,13 @@ public class Dog extends Animal {
         return Objects.hash(age);
     }
 
+    @Override
+    public String toString() {
+        return "Dog: " +
+                "name='" + name + '\'' +
+                ", age=" + age ;
+    }
+
     void bark() {
         System.out.println("bark bark");
     }
