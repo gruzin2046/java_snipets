@@ -1,4 +1,4 @@
-package polymorphism;
+package _15_polymorphism;
 
 public class Animal {
     String name;

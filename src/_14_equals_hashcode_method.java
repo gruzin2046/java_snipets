@@ -1,4 +1,4 @@
-import polymorphism.Dog;
+import _15_polymorphism.Dog;
 
 public class _14_equals_hashcode_method {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package polymorphism;
+package _15_polymorphism;
 
 public class Cat extends Animal {
     public Cat(String name) {

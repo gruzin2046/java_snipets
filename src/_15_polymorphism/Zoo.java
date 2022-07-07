@@ -1,4 +1,4 @@
-package polymorphism;
+package _15_polymorphism;
 
 public class Zoo {
     public static void main(String[] args) {
