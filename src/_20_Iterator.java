@@ -7,6 +7,7 @@ public class _20_Iterator {
 
         String[] names = {"ala","ada","asia","kasia","beata","kamil"};
         ArrayList<String> nameList = new ArrayList<>(Arrays.asList(names));
+        System.out.println(nameList);
 
         // create iterator based on list.
         // iterator is a pointer who point certain element on the list.
