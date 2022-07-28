@@ -16,4 +16,29 @@ public class _27_Abstract_class_vs_interface {
     // 2. both can't be instanced
     // 3. both should have abstract methods (without the body)
     // 4. both can have static methods (from Java 9)
+
+    // 5. Interface (from Java 8) can have default methods with implementation in it,
+    // also from Java 9 can have private methods - purpose of splitting big default methods.
+
+    // IF YOU CREATE INTERFACE WITH DEFAULT OR STATIC METHODS THINK IF YOU ARE USING CORRECT TOOL !!!
+
+    interface Example {
+        default void complicatedMethod() {
+            read(); //read something from fie
+            calculate(); //calculate
+            save(); //save to file
+        }
+
+        private void read() {
+            //read
+        };
+
+        private void calculate() {
+            //calculate
+        };
+
+        private void save() {
+            //save
+        };
+    }
 }

@@ -1,9 +1,11 @@
+package _23_Exceptions;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //list of exceptions https://docs.oracle.com/javase/7/docs/api/java/lang/RuntimeException.html
 
-class Test {
+class _23_Exceptions {
     public static void main(String[] args) {
         //initiate scanner, int array, and error boolean
         Scanner sc = new Scanner(System.in);
