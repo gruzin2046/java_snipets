@@ -1,21 +1,21 @@
 
-    class Pair<T, V> {
+    class _26_Generics <T, V> {
         T first;
         V second;
 
-        public Pair(T first, V second) {
+        public _26_Generics(T first, V second) {
             this.first = first;
             this.second = second;
         }
 
-        public static <T, V> void printInfo(Pair<T, V> pair) {
+        public static <T, V> void printInfo(_26_Generics<T, V> pair) {
             System.out.println("" + pair.first + ", " + pair.second);
         }
 
         public static void main(String[] args) {
-            Pair<Integer,String> person = new Pair<>(321, "Albert");
-            Pair<String,String> couple = new Pair<>("Diego", "Jessica");
-            Pair<Double,Long> numbers = new Pair<>(33.33, 123_000_000_000L);
+            _26_Generics<Integer,String> person = new _26_Generics<>(321, "Albert");
+            _26_Generics<String,String> couple = new _26_Generics<>("Diego", "Jessica");
+            _26_Generics<Double,Long> numbers = new _26_Generics<>(33.33, 123_000_000_000L);
 
             printInfo(person);
             printInfo(couple);

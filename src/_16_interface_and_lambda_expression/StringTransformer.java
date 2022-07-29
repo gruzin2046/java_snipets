@@ -1,4 +1,4 @@
-package _16_functional_interface_and_lambda_expression;
+package _16_interface_and_lambda_expression;
 
 @FunctionalInterface
 public interface StringTransformer {

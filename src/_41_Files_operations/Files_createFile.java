@@ -1,14 +1,15 @@
+package _41_Files_operations;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.util.List;
-import java.util.stream.Collectors;
 
-public class _25_create_text_file {
+public class Files_createFile {
     public static void main(String[] args) throws IOException {
 
+        // Creation text files using Files.createFile() and writeString()
         // let's create path directory
         String home = System.getProperty("user.home");
         String desktop = System.getProperty("user.home") + "\\Desktop";
