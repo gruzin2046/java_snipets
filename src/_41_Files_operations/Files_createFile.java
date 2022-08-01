@@ -11,6 +11,7 @@ public class Files_createFile {
 
         // Creation text files using Files.createFile() and writeString()
         // let's create path directory
+        String projDir = System.getProperty("user.dir");
         String home = System.getProperty("user.home");
         String desktop = System.getProperty("user.home") + "\\Desktop";
         String tmp = System.getProperty("java.io.tmpdir");
