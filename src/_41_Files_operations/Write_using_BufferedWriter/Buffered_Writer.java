@@ -1,11 +1,8 @@
 package _41_Files_operations.Write_using_BufferedWriter;
 
-
-import javax.management.StringValueExp;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Buffered_Writer {
     public static void main(String[] args) {
