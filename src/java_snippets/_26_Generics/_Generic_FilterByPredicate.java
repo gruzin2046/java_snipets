@@ -36,7 +36,8 @@ public class _Generic_FilterByPredicate {
         System.out.println(namesLengthEquals6); // [Miriam, Albert]
 
         // use method to have only names with double letters inside
-        List<String> namesWithDoubleLetters = filterByPredicate(namesList, n -> {
+        // define predicate
+        Predicate<String> doubleLettersInStringPredicate = n -> {
             List<Integer> integers = new ArrayList<>(List.of(0));
             for (int i = 0; i < n.length(); i++) {
                 int counter = 0;
@@ -46,11 +47,13 @@ public class _Generic_FilterByPredicate {
                 }
                 if (counter >= 2) integers.add(counter);
             }
-            List<Integer> x = integers.stream().filter(i -> i >= 2).toList();
-            return x.size() != 0;
-        });
+            List<Integer> doubledLettersList = integers.stream().filter(i -> i >= 2).toList();
+            return doubledLettersList.size() != 0;
+        };
 
+        List<String> namesWithDoubleLetters = filterByPredicate(namesList, doubleLettersInStringPredicate);
         System.out.println(namesWithDoubleLetters); // [Anna, Miriam]
+
     }
 }
 
