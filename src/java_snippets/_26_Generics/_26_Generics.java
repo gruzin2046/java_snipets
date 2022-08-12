@@ -1,4 +1,4 @@
-package java_snippets;
+package java_snippets._26_Generics;
 
 class _26_Generics <T, V> {
         T first;
