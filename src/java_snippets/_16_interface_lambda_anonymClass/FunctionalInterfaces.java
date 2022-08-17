@@ -35,7 +35,7 @@ public class FunctionalInterfaces {
 
         // stream example:
         namesList.stream()
-                // forEach method takes Function
+                // forEach method takes Consumer
                 .forEach(n -> System.out.print("{" + n + "}")); // {Anna}{Nico}{Adam}{Miriam}{Vito}
                 //.forEach(n -> System.out.println(n));
 

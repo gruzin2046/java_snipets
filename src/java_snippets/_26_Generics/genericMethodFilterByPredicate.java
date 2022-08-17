@@ -3,7 +3,7 @@ package java_snippets._26_Generics;
 import java.util.*;
 import java.util.function.Predicate;
 
-public class _Generic_FilterByPredicate {
+public class genericMethodFilterByPredicate {
 
     // 1. define method which takes generic list and generic predicate
     // 2. check condition define in predicate for every element in list
