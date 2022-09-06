@@ -1,63 +1,51 @@
 package java_snippets._21_streams;
 
-import java.util.Comparator;
-import java.util.Optional;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Streams {
-    // we can find length of the longest item in the list using for loop:
-    public int lengthOfLongestString(List<String> list) {
-        int length = list.get(0).length();
-        for(String s: list) {
-            if (s.length() > length) length = s.length();
-        }
-        return length;
-    }
+    public static void main(String[] args) throws FileNotFoundException {
 
-    // or simpler way creating a stream
-    public Optional<Integer> lengthOfLongestString2(List<String> list) {
-        return list.stream()
-                .map(String::length)
-                .max(Comparator.naturalOrder());
-    }
+        // 1. Create stream of primitive based on elements sequence
+        DoubleStream doubleStream = DoubleStream.of(1.2, 2.553, 3.0, 4.2, 5.12);
 
-    public static void main(String[] args) {
+        // 2. Based on existing arr
+        int[] ints = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        IntStream intStream = IntStream.of(ints);
+
+        // 3. Open string on existing list:
         ArrayList<String> strList = new ArrayList<>(Arrays.asList("ala", "ma", "kota", "kot", "ma", "problem"));
-        Streams s = new Streams();
-        System.out.println(s.lengthOfLongestString(strList));
-        System.out.println(s.lengthOfLongestString2(strList));
+        Stream<String> stringStream = strList.stream();
+
+        // 4. Create stream using iterate(int startingValue, intUnaryOperator f)
+        // intUnaryOperator is functional interface which takes int and returns int
+        // in this case it is creating stream of integers starting from 0 to 100
+        IntStream numStream = IntStream.iterate(0, x -> x + 1).limit(100);
+
+        // 5. We can also open stream using methods from certain class
+        String path = System.getProperty("user.dir") +
+                "\\src\\java_snippets\\_41_Files_operations\\Read_using_BufferedReader" +
+                "\\testFile.txt";
+
+        // tokens() from Scanner
+        Scanner scanner = new Scanner(new File(path));
+        Stream<String> tokensStream = scanner.tokens();
+        System.out.println(tokensStream.collect(Collectors.toList()));
+
+        // lines() from BufferedReader
+        FileReader fileReader = new FileReader(path);
+        BufferedReader bufferedreader = new BufferedReader(fileReader);
+        Stream<String> linesStream = bufferedreader.lines();
+        System.out.println(linesStream.collect(Collectors.toList()));
     }
-
-    // common stream() usage
-
-    // Accumulate names into a List
-    // List<String> list = people.stream()
-    // .map(Person::getName)
-    // .collect(Collectors.toList());
-
-    // Accumulate names into a TreeSet
-    // Set<String> set = people.stream()
-    // .map(Person::getName)
-    // .collect(Collectors.toCollection(TreeSet::new));
-
-    // Convert elements to strings and concatenate them, separated by commas
-    // String joined = things.stream()
-    // .map(Object::toString)
-    // .collect(Collectors.joining(", "));
-
-    // Compute sum of salaries of employee
-    // int total = employees.stream()
-    // .collect(Collectors.summingInt(Employee::getSalary));
-
-    // Group employees by department
-    // Map<Department, List<Employee>> byDept = employees.stream()
-    // .collect(Collectors.groupingBy(Employee::getDepartment));
-
-    // Compute sum of salaries by department
-    // Map<Department, Integer> totalByDept = employees.stream()
-    // .collect(Collectors.groupingBy(Employee::getDepartment,Collectors.summingInt(Employee::getSalary)));
-
-    // Partition students into passing and failing
-    // Map<Boolean, List<Student>> passingFailing = students.stream()
-    // .collect(Collectors.partitioningBy(s -> s.getGrade() >= PASS_THRESHOLD));
 }

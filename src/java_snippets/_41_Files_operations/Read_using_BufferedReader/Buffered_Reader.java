@@ -10,7 +10,7 @@ public class Buffered_Reader {
         ArrayList<String> list = new ArrayList<>();
         String projDir = System.getProperty("user.dir");
         String path = projDir +
-                "\\src\\java._41_Files_operations\\Read_using_BufferedReader" +
+                "\\src\\java_snippets\\_41_Files_operations\\Read_using_BufferedReader" +
                 "\\testFile.txt";
         // 1. initiate FileReader and BufferedReader inside tryWithResources block
         // -> resources passed to try as arguments
