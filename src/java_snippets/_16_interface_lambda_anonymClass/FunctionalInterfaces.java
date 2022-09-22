@@ -1,9 +1,7 @@
 package java_snippets._16_interface_lambda_anonymClass;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -20,8 +18,11 @@ public class FunctionalInterfaces {
     reprezentuje funkcję przyjmującą argument typu T i zwracającą argument typu R,
        3. Predicate<T> - posiada metodę test(T t) -
     przyjmuje argument typu T i zwraca wartość typu boolean,
-       4. Supplier<T> - posiada metodę get()
-    - tworzy nowy obiekt typu T. */
+       4. Supplier<T> - posiada metodę get() -
+    - tworzy nowy obiekt typu T.
+       5. Comparator<T> - posiada metodę compare(T t1, T t2) -
+    - przyjmuje dwa obiekty typu T i zwraca int
+    */
 
     public static void main(String[] args) {
         String[] names = {"Anna", "Nico", "Adam", "Miriam", "Vito"};
@@ -65,10 +66,20 @@ public class FunctionalInterfaces {
         System.out.println(namesStartsWithA); //[Anna, Adam]
 
         // 4. Supplier<T>: takes void, returns <T>
-        Supplier<LocalDateTime> time = () -> LocalDateTime.now();
+        //Supplier<LocalDateTime> time = () -> LocalDateTime.now(); // lambda
+        Supplier<LocalDateTime> time = LocalDateTime::now;
         LocalDateTime timeNow = time.get();
 
         System.out.println(timeNow); // 2022-08-11T14:14:55.026751100
+
+        // 5. Comparator<T>: takes<T1>, <T2>, returns int
+        //Comparator<String> stringComparator = (a,b) -> a.hashCode() - b.hashCode(); // lambda
+        Comparator<String> stringComparator = Comparator.comparingInt(String::hashCode);
+        int compareStrings =  stringComparator.compare("Anna", "Beata"); //-62012555
+
+        //stream example:
+        Optional<String> max = namesList.stream()
+                .max(stringComparator); // Optional[Vito]
 
     }
 }

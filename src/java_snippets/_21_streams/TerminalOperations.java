@@ -21,6 +21,7 @@ public class TerminalOperations {
 
         // 3. min(Comparator c) and max(Comparator c) returns Optional<T>
         Optional<String> strWithHighestHashCode = strList.stream()
+                //.max((a,b) -> a.hashCode() - b.hashCode()); // lambda expression
                 .max(Comparator.comparingInt(String::hashCode)); // Optional[kota]
 
         // 4. anyMatch(Predicate p), allMatch(Predicate p), noneMatch(Predicate p) returns boolean
@@ -42,7 +43,6 @@ public class TerminalOperations {
         // 7. collect(Collector c)
         String strConcat = strList.stream()
                 .map(String::toUpperCase)
-                .collect(Collectors.joining(" "));
-        System.out.println(strConcat);
+                .collect(Collectors.joining(" ")); // ALA MA KOTA KOT MA PROBLEM
     }
 }
