@@ -44,5 +44,11 @@ public class TerminalOperations {
         String strConcat = strList.stream()
                 .map(String::toUpperCase)
                 .collect(Collectors.joining(" ")); // ALA MA KOTA KOT MA PROBLEM
+
+        // 8. T reduce(T identity, BinaryOperator<T> accumulator);
+        String strConcatByReduce = strList.parallelStream()
+                .reduce("", (a, b) -> a + " " + b)
+                .trim(); // ala ma kota kot ma problem
+
     }
 }
