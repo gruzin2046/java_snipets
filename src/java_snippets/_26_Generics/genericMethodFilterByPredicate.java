@@ -11,18 +11,9 @@ public class genericMethodFilterByPredicate {
     // 4. return results
 
     public static <T> List<T> filterByPredicate(List<T> list, Predicate<T> predicate) {
-        List<T> result = new ArrayList<>();
-        for (T element : list) {
-            if (predicate.test(element)) {
-                result.add(element);
-            }
-        }
-        return result;
+        return list.stream().filter(predicate).toList();
     }
 
-    /////////////////////////////////////////////////////////////////////////////////
-    //// example:
-    /////////////////////////////////////////////////////////////////////////////////
     public static void main(String[] args) {
         String[] names = {"Anna", "Nico", "Adam", "Miriam", "Vito", "Albert"};
         LinkedList<String> namesList = new LinkedList<>(Arrays.asList(names));
@@ -36,24 +27,12 @@ public class genericMethodFilterByPredicate {
         System.out.println(namesLengthEquals6); // [Miriam, Albert]
 
         // use method to have only names with double letters inside
-        // define predicate
         Predicate<String> doubleLettersInStringPredicate = n -> {
-            List<Integer> integers = new ArrayList<>(List.of(0));
-            for (int i = 0; i < n.length(); i++) {
-                int counter = 0;
-                for (int j = 0; j < n.length(); j++) {
-                    if (n.charAt(i) == n.charAt(j))
-                        counter++;
-                }
-                if (counter >= 2) integers.add(counter);
-            }
-            List<Integer> doubledLettersList = integers.stream().filter(i -> i >= 2).toList();
-            return doubledLettersList.size() != 0;
+            long chars = n.chars().mapToObj(i -> (char) i).distinct().count();
+            return chars != n.length();
         };
 
         List<String> namesWithDoubleLetters = filterByPredicate(namesList, doubleLettersInStringPredicate);
         System.out.println(namesWithDoubleLetters); // [Anna, Miriam]
-
     }
 }
-
