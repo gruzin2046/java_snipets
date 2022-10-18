@@ -12,23 +12,21 @@ public class FunctionalInterfaces {
        List on all functional interfaces:
        https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/package-summary.html
 
-       1. Consumer<T> - posiada metodę accept(T t) -
-    przyjmuje argument typu T, ma za zadanie wykonać pewną operację i nie zwraca wyniku,
-       2. Function<T, R> - posiada metodę apply(T t) -
-    reprezentuje funkcję przyjmującą argument typu T i zwracającą argument typu R,
-       3. Predicate<T> - posiada metodę test(T t) -
-    przyjmuje argument typu T i zwraca wartość typu boolean,
-       4. Supplier<T> - posiada metodę get() -
-    - tworzy nowy obiekt typu T.
-       5. Comparator<T> - posiada metodę compare(T t1, T t2) -
+       1. Consumer<T> - posiada metodę accept(T t)
+    - przyjmuje argument typu T, ma za zadanie wykonać pewną operację i nie zwraca wyniku,
+       2. Function<T, R> - posiada metodę apply(T t)
+    - reprezentuje funkcję przyjmującą argument typu T i zwracającą argument typu R,
+       3. Predicate<T> - posiada metodę test(T t)
+    - przyjmuje argument typu T i zwraca wartość typu boolean,
+       4. Supplier<T> - posiada metodę get()
+    - tworzy nowy obiekt typu T,
+       5. Comparator<T> - posiada metodę compare(T t1, T t2)
     - przyjmuje dwa obiekty typu T i zwraca int
     */
 
     public static void main(String[] args) {
         String[] names = {"Anna", "Nico", "Adam", "Miriam", "Vito"};
         LinkedList<String> namesList = new LinkedList<>(Arrays.asList(names));
-
-        System.out.println(namesList);
 
         // 1. Consumer<T>: takes <T>, returns void
         Consumer<String> stringPrinter = s -> System.out.println("I'm printing string: " + s);

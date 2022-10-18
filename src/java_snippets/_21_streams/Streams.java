@@ -47,5 +47,12 @@ public class Streams {
         BufferedReader bufferedreader = new BufferedReader(fileReader);
         Stream<String> linesStream = bufferedreader.lines();
         System.out.println(linesStream.collect(Collectors.toList()));
+
+        // 6. Characters stream created from String:
+        String example = "abcdefgh";
+        List<Character> exampleCharacters = example.chars() //IntStream of unicode values (integers)
+                .mapToObj(i -> (char) i) //casting to chars
+                .toList();
+        System.out.println(exampleCharacters);
     }
 }
