@@ -3,6 +3,7 @@ package java_snippets._18_super_key_word;
 public class Computer {
     double cpuTemperature;
     int ramMemory;
+    String producer = "Apple";
 
     Computer(double cpuTemperature, int ramMemory) {
         this.cpuTemperature = cpuTemperature;

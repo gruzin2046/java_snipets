@@ -2,6 +2,8 @@ package java_snippets._18_super_key_word;
 
 public class Notebook extends Computer {
     double batteryCapacity;
+    String producer = "hp";
+
     Notebook(double cpuTemperature, int ramMemory, double batteryCapacity) {
         // 1. super key word allows using constructor from parent class
         // inside constructor of the child class:
@@ -17,8 +19,15 @@ public class Notebook extends Computer {
         System.out.println("batteryCapacity: " + batteryCapacity);
     }
 
+    public void printProducerName() {
+        // 3. super allows us to access parent class field
+        System.out.println("parent class producer name " + super.producer);
+        System.out.println("child class producer name " + producer);
+    }
+
     public static void main(String[] args) {
         Notebook myNotebook = new Notebook(98432, 124, 20000);
         myNotebook.printParameters(myNotebook);
+        myNotebook.printProducerName();
     }
 }
