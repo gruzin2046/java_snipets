@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 //list of exceptions https://docs.oracle.com/javase/7/docs/api/java/lang/RuntimeException.html
 
-class _23_Exceptions {
+class _23_Exceptions_try_catch {
     public static void main(String[] args) {
         //initiate scanner, int array, and error boolean
         Scanner sc = new Scanner(System.in);
