@@ -8,10 +8,11 @@ import java.util.Scanner;
 public class Read_using_Scanner {
     public static void main(String[] args) throws IOException {
         ArrayList<String> list = new ArrayList<>();
+        // * we can get project directory using System.getProperty("user.dir") or using (.) in path  directly
         String projDir = System.getProperty("user.dir");
-        String path = projDir +
-                "\\src\\java._41_Files_operations\\Read_using_Scanner" +
-                "\\testFile.txt";
+        // * String path = projDir +
+        //            "\\src\\java_snippets\\_41_Files_operations\\Read_using_Scanner\\testFile.txt";
+        String path = ".\\src\\java_snippets\\_41_Files_operations\\Read_using_Scanner\\testFile.txt";
         File file = new File(path);
         System.out.println(path);
         // *. first create file if needed
