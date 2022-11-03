@@ -4,8 +4,8 @@ public class _34_Text_format {
     public static void main(String[] args) {
         // 1. to format certain string we can use
         // - System.out.printf()
-        // - String.format(String s, arguments)
-        // - formatted() -> called on string itself
+        // - String.format(String s, arguments)  -> returns String itself
+        // - formatted() -> called on string itself -> returns String itself
 
         // 2. to specify how to format a string we use notation:
         // %[argument_index$][flags][width][.precision]conversion_type

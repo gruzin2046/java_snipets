@@ -6,7 +6,7 @@ import java.util.regex.*;
 public class _37_Regex_Pattern_Matcher {
     public static void main(String[] args) {
 
-        String lorem = "Lorem ipsum lorem ipsum lorem ipsum wTF lorem ipsum";
+        String lorem = "Lorem ipsum lorem ipsum lorem ipsum WtF lorem ipsum";
 
         // create and describe pattern using .compile(String regex, int flags)
         Pattern pattern = Pattern.compile("wtf", Pattern.CASE_INSENSITIVE);
