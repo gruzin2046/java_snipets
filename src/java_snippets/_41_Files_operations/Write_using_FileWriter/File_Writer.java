@@ -23,11 +23,11 @@ public class File_Writer {
         File file = new File(path);
 
         // methods like createFile() needs to be surrounded by try catch block
-//        try {
-//            createFile(file);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            createFile(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         // 2. there is a better way!
         // Since Java 7, a convenient way to close an object of FileWriter

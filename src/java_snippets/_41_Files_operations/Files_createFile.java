@@ -21,7 +21,7 @@ public class Files_createFile {
 
         // create empty file using:
         Files.createFile(
-                Path.of(home, "Desktop", "file.txt"));
+                Path.of(home, "Desktop", "testFile.txt"));
         // create empty file, same directory:
         Files.createFile(
                 Path.of(desktop,  "file2.txt"));
