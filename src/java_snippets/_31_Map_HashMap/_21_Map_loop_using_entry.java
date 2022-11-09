@@ -1,4 +1,4 @@
-package java_snippets._31_Map;
+package java_snippets._31_Map_HashMap;
 
 import java.util.HashMap;
 import java.util.Map;

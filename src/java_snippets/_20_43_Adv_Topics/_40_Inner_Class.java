@@ -1,4 +1,4 @@
-package java_snippets;
+package java_snippets._20_43_Adv_Topics;
 // In Java, it is also possible to nest classes (a class within a class).
 // The purpose of nested classes is to group classes that belong together,
 // which makes your code more readable and maintainable.

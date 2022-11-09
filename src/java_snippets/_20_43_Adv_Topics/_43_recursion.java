@@ -1,4 +1,4 @@
-package java_snippets;//calc numbers from range using recursion (inception of the same method)
+package java_snippets._20_43_Adv_Topics;//calc numbers from range using recursion (inception of the same method)
 
 public class _43_recursion {
     static int loopNum = 1;

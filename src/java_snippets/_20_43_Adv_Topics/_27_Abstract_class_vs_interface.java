@@ -1,4 +1,4 @@
-package java_snippets;
+package java_snippets._20_43_Adv_Topics;
 
 public class _27_Abstract_class_vs_interface {
     //*******  DIFFERENCES  *******

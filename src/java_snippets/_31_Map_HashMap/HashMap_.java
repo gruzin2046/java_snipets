@@ -1,7 +1,6 @@
-package java_snippets._31_Map;
+package java_snippets._31_Map_HashMap;
 
 import java.util.*;
-import java.util.stream.Collectors;
 // hierarchy of hashmap:
 // LinkedHashMap(class) < HashMap(class) < AbstractMap (abstract class) < Map (interface)
 
